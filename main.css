@@ -1,0 +1,168 @@
+:root {
+  --hello-heart: pointer;
+}
+
+.main {
+  width: 900px;
+  height: 600px;
+  /*   border:2px solid black; */
+  position: fixed;
+}
+/* h1 {
+    font-family: "Sansita Swashed", cursive;
+    color: red;
+    font-size: 60px;
+    margin-left:50px;
+  } */
+.arrow1 {
+  width: 30px;
+  border: 1px solid black;
+  background: black;
+  position: absolute;
+  display: block;
+  top: 60.4%;
+  left: 22.1%;
+  transform: skewY(35deg);
+  animation: arrow 2s linear;
+}
+.arrow2 {
+  width: 30px;
+  border: 1px solid black;
+  background: black;
+  position: absolute;
+  display: block;
+  top: 64.8%;
+  left: 22.4%;
+  transform: skewY(-47deg);
+  animation: arrow 2s linear;
+}
+.arrow3 {
+  width: 30px;
+  border: 1px solid black;
+  background: black;
+  position: absolute;
+  display: block;
+  top: 46.2%;
+  left: 78%;
+  transform: skewY(35deg);
+  animation: arrow 2s linear;
+}
+.arrow4 {
+  width: 30px;
+  border: 1px solid black;
+  background: black;
+  position: absolute;
+  display: block;
+  top: 50.6%;
+  left: 77.8%;
+  transform: skewY(-45deg);
+  animation: arrow 2s linear;
+}
+@keyframes arrow {
+  0% {
+    width: 0;
+  }
+}
+.line {
+  position: absolute;
+  width: 500px;
+  transform: skewY(-10deg);
+  top: 55%;
+  margin-left: 230px;
+  background: black;
+  border: 1px solid black;
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: steps(3, end);
+  animation: line 4s linear;
+}
+@keyframes line {
+  0% {
+    width: 0;
+  }
+}
+.heart {
+  background: pink;
+  /*   border:2px solid pink; */
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: rotate(315deg);
+  bottom: 0;
+  margin: auto;
+  cursor: var(--hello-heart);
+  /*   transition-property: all;
+    transition-duration: 2s;
+     transition-timing-function:steps(3,end); */
+  animation: heart 5s linear;
+}
+@keyframes heart {
+  0% {
+    background: none;
+    border: none;
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: steps(5, end);
+  }
+}
+/* .rot
+  {
+    margin:400px 0 ;
+    transform:rotate(315deg);
+    width:100px;
+    heigth:100px;
+    position:absolute;
+    border:1px solid black;
+   
+  }  */
+
+/* .heart:hover::after
+  {
+   transition-property: all;
+    background:pink;
+    transition-duration: 2s;
+    transition-timing-function:steps(4,end);
+    
+  } */
+
+/* .heart:hover::before
+  {
+   transition-property: all;
+    background:pink;
+    transition-duration: 2s;
+    transition-timing-function:steps(3,end);
+    
+  } */
+.heart::after {
+  cursor: var(--hello-heart);
+  content: "";
+  position: absolute;
+  background: pink;
+  width: 150px;
+  height: 150px;
+  right: -55%;
+  border-radius: 50%;
+  /*    transition-property: all;
+    transition-duration: 2s;
+     transition-timing-function:steps(3,end); */
+  animation: heart 5s linear;
+}
+
+.heart::before {
+  content: "";
+  cursor: var(--hello-heart);
+  position: absolute;
+  background: pink;
+  width: 150px;
+  height: 150px;
+  top: -85px;
+  left: -1px;
+  transform: rotate(-45deg);
+  border-radius: 50%;
+  /*   transition-property: all;
+    transition-duration: 2s;
+     transition-timing-function:steps(4,end); */
+  animation: heart 5s linear;
+}
